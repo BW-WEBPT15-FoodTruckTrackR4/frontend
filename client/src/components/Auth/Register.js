@@ -35,7 +35,7 @@ function Register(props) {
     }
 
     return (
-        <div className="register">
+        <div className="auth-form">
             <Form onSubmit={(e) => {
                 e.preventDefault();
                 register(user);
