@@ -4,14 +4,16 @@ export const dinerData = [
         username: 'ThatFoodGuy92',
         password: '!FoodGod1',
         email: 'FoodGuy92@gmail.com',
-        favoriteTrucks: []
+        currentLocation: 'Twentynine Palms, California, 92277',
+        favoriteTrucks: ['Hot tamale']
     },
     {
         id: 2,
         username: 'RamseyGorden1',
         password: '!diot1',
         email: 'realramseygorden@gmail.com',
-        favoriteTrucks: []
+        currentLocation: 'Fort Benning, Ga, 31905',
+        favoriteTrucks: ['Hot Tamale']
     }
 ];
 
@@ -23,18 +25,18 @@ export const operatorData = [
         email: 'hot1@live.com',
         trucksOwned: [
             {
-                imageUrl: image,
+                imageUrl: '',
                 cuisineType: 'Hispanic',
-                customerRatings: [5, 2, 5, 5, 1, 3, 5, 4],
-                customerRatingAvg: 3.8,
+                customerRatings: [5, 2],
+                customerRatingAvg: 3.5,
                 menu: [
                     menuItems = {
                         itemName: 'Tamale',
                         itemDescription: 'Tamales are a hispanic dish. Which feature a corn-based masa (dough) wrapped around a filling and steamed in a corn husk. They are traditionally filled with either chicken, pork, beef, chesse and/or beans.',
-                        itemPhotos: [],
+                        itemPhotos: [imageUrl= ''],
                         itemPrice: parseFloat(),
-                        customerRatings: [5, 2, 5, 5, 1, 3, 5, 4],
-                        customerRatingAvg: 3.8,
+                        customerRatings: [5, 2],
+                        customerRatingAvg: 3.5,
                         currentLocation: {
                             latitude: 41.850608,
                             longitude: -87.670746,
