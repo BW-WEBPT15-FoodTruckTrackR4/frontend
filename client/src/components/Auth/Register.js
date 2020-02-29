@@ -12,6 +12,10 @@ function Register(props) {
         role: ''
     });
 
+    /* error and success state for validation */
+    const [err, setErr] = useState('');
+    const [success, setSuccess] = useState('');
+
     /* input change handler */
     const handleChange = (e) => {
         setUser({
@@ -22,6 +26,10 @@ function Register(props) {
 
     /* handle submit */
     const register = (user) => {
+
+        /* validation */
+
+
         /* temp filler request */
         axios.post('/api/auth/register', user)
             .then(res => {

@@ -14,7 +14,10 @@ code {
 
 /* auth form styling */
 .auth-form {
-  width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .auth-form form input {
@@ -25,4 +28,8 @@ code {
   margin: 10px 0;
   background: #D90B42;
   border: none;
+}
+
+.auth-form p.error {
+  color: #D93030;
 }
