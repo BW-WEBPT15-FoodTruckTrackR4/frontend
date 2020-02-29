@@ -12,16 +12,16 @@ code {
     monospace;
 }
 
-/* register form styling */
-.register {
+/* auth form styling */
+.auth-form {
   width: 500px;
 }
 
-.register form input {
+.auth-form form input {
   margin: 10px 0;
 }
 
-.register button {
+.auth-form button {
   margin: 10px 0;
   background: #D90B42;
   border: none;
