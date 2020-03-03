@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { axiosWithAuth } from '../../utils/axiosWithAuth.js';
 import { Button, Form, Input, Alert } from 'reactstrap';
 import { useHistory, Link } from 'react-router-dom';

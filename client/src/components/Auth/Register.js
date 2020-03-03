@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button, Form, Input, Label, Alert } from 'reactstrap';
-import axios from 'axios';
+// import axios from 'axios';
 
 function Register(props) {
 
@@ -44,14 +44,14 @@ function Register(props) {
             setErr('Please enter a password that is at least 8 characters long.');
             return;
         }
-        else if (user.username.match(/[^a-z0-9]/gi, '')) {
-            setErr('Please enter a valid username that containts only alphanumeric characters.');
-            return;
-        }
-        else if (!user.email.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
-            setErr('Please enter a valid email address.');
-            return;
-        }
+        // else if (user.username.match(/[^a-z0-9]/gi, '')) {
+        //     setErr('Please enter a valid username that containts only alphanumeric characters.');
+        //     return;
+        // }
+        // else if (!user.email.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
+        //     setErr('Please enter a valid email address.');
+        //     return;
+        // }
         else {
 
             console.log(user);
