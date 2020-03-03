@@ -1,7 +1,7 @@
 export const dinerData = [
     {
         id: 1,
-        username: 'ThatFoodGuy92',
+        userName: 'ThatFoodGuy92',
         password: '!FoodGod1',
         email: 'FoodGuy92@gmail.com',
         currentLocation: 'Twentynine Palms, California, 92277',
@@ -9,7 +9,7 @@ export const dinerData = [
     },
     {
         id: 2,
-        username: 'RamseyGorden1',
+        userName: 'RamseyGorden1',
         password: '!diot1',
         email: 'realramseygorden@gmail.com',
         currentLocation: 'Fort Benning, Ga, 31905',
@@ -20,7 +20,7 @@ export const dinerData = [
 export const operatorData = [
     {
         id: 101,
-        username: 'Hot Tamale',
+        userName: 'Hot Tamale',
         password: '!Hot1s',
         email: 'hot1@live.com',
         trucksOwned: [
