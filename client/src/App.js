@@ -11,6 +11,7 @@ import Login from './components/Auth/Login';
 function App() {
   return (
     <div className="App">
+      <p>Testing</p>
       <Route path="/register">
         <Register />
       </Route>
