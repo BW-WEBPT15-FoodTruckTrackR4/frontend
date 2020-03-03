@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-function Dashboard() {
+/* components */
+import DinerProfile from './DinerView/DinerProfile';
+
+function Dashboard(props) {
     return (
         <div>
-            
+            <DinerProfile />
         </div>
     )
 }
 
-export default Dashboard
+export default Dashboard;

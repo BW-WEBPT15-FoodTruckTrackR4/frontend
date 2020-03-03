@@ -3,14 +3,14 @@ import { axiosWithAuth } from '../../utils/axiosWithAuth.js';
 import { Button, Form, Input, Alert } from 'reactstrap';
 import { useHistory, Link } from 'react-router-dom';
 
-function Login() {
+function DinerLogin() {
 
     let history = useHistory();
 
     /* not sure how you and the backend want to handle
         being able to login with either your username or password */
     const [user, setUser] = useState({
-        usernameEmail: '',
+        username: '',
         password: ''
     })
 
@@ -33,28 +33,29 @@ function Login() {
         /* I tried figuring out the availity validation with Reacstrap, and it wans't clicking
             for me, so I just fell back to vanilla JavaScript validation for the forms. */
 
-        if (user.usernameEmail === '' && user.password === '') {
+        if (user.username === '' && user.password === '') {
             setErr('Both fields must be filled out.');
         }
-        else if (user.usernameEmail === '') {
+        else if (user.username === '') {
             setErr('You must enter in a valid username or email address.');
         }
         else if (user.password === '') {
             setErr('You must enter in your password.');
         }
-        else if (user.usernameEmail.length > 254 || user.usernameEmail.length < 5) {
+        else if (user.username.length > 254 || user.username.length < 5) {
             setErr('Please enter a valid username or email address that is at least 5 characters long.');
         }
         else if (user.password.length > 128 || user.password.length < 8) {
             setErr('Please enter a valid password that is AT LEAST 8 characters long.');
         }
-        else if (user.usernameEmail.match(/[^a-z0-9@.]/gi, '')) {
+        else if (user.username.match(/[^a-z0-9@.]/gi, '')) {
             setErr('Please enter a valid, alphanumeric username or email address.');
         }
         else {
-            axiosWithAuth().post('/api/auth/login', user)
+            axiosWithAuth().post('/diner/login', user)
                 .then(res => {
                     console.log(res);
+                    localStorage.setItem('token', res.data.token);
                     setSuccess('Login successful...');
                     history.push('/Dashboard');
                 })
@@ -75,9 +76,9 @@ function Login() {
                 });
             }}>
                 <Input
-                    name="usernameEmail"
-                    placeholder="Username or Email"
-                    value={user.usernameEmail}
+                    name="username"
+                    placeholder="Username"
+                    value={user.username}
                     autoComplete="off"
                     onChange={handleChange} />
                 <Input
@@ -102,4 +103,4 @@ function Login() {
     )
 }
 
-export default Login;
+export default DinerLogin;
