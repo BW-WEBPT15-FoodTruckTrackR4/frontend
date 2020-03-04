@@ -56,6 +56,7 @@ function OperatorLogin() {
                 .then(res => {
                     console.log(res);
                     localStorage.setItem('token', res.data.token);
+                    localStorage.setItem('role', 'operator');
                     setSuccess('Login successful...');
                     history.push('/Dashboard');
                 })

@@ -9,7 +9,8 @@ function DinerProfile(props) {
     useEffect(() => {
         axiosWithAuth().get(`/trucks`)
             .then(res => {
-                console.log(res);
+                // console.log(res);
+                setTrucks(res.data);
             })
             .catch(err => {
                 console.log(err);
@@ -18,7 +19,19 @@ function DinerProfile(props) {
 
     return (
         <div>
-
+            {console.log(trucks)}
+            <h2>Available Trucks:</h2>
+            {
+                trucks.map((truck, index) => {
+                    return (
+                        <div className="truck-card" key={index}>
+                            <img src={truck.imageOfTruck} alt="Truck View" />
+                            <p>Cuisine Type: {truck.cuisineType}</p>
+                            <p>Customer Rating Average: {truck.customerRatingAvg}</p>
+                        </div>
+                    )
+                })
+            }
         </div>
     )
 }
