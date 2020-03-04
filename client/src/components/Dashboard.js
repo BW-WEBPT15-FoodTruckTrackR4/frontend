@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 /* components */
 import DinerProfile from './DinerView/DinerProfile';
 
 function Dashboard(props) {
+
+    const [role, setRole] = useState(localStorage.getItem('role'));
+
     return (
         <div>
-            <DinerProfile />
+            {role === 'diner' && <DinerProfile />}
         </div>
     )
 }

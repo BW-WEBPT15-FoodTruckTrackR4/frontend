@@ -33,3 +33,13 @@ code {
 .auth-form p.error {
   color: #D93030;
 }
+
+/* Truck Card */
+.truck-card {
+  width: 100%;
+}
+
+.truck-card img {
+  width: 100%;
+  object-fit: contain;
+}
