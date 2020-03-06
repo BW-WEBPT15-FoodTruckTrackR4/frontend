@@ -18,6 +18,7 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 50px;
 }
 
 .auth-form form input {
@@ -42,4 +43,84 @@ code {
 .truck-card img {
   width: 100%;
   object-fit: contain;
+}
+
+/* Header and Navigation */
+.header-nav {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+}
+
+.header-nav .logo {
+  padding-top: 10px;
+  width: 25%;
+  height: 5rem;
+}
+
+.header-nav .logo img {
+  width: 100%;
+  height: 5rem;
+  object-fit: contain;
+}
+
+.header-nav .nav {
+  width: 70%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.header-nav .nav a {
+  color: #E44635;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 300ms;
+}
+
+.header-nav .nav a:hover {
+  transition: opacity 300ms;
+  opacity: 0.8;
+}
+
+/* login controls */
+
+.login-controls {
+  margin-top: 50px;
+}
+
+.login-controls button {
+  width: 150px;
+  border: none;
+  border-radius: 3px;
+  font-weight: 300;
+  transition: all 300ms;
+  padding: 10px;
+  margin: 30px 10px 0;
+}
+
+.login-controls button:hover {
+  transition: opacity 300ms;
+  opacity: 0.8;
+}
+
+/* misc. */
+p.extra {
+  margin-top: 20px;
+}
+
+/* footer */
+footer {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  line-height: 30px;
+  height: 30px;
+  background: #1a1a1a;
+  color: #fafafa;
+  font-size: 12px;
 }

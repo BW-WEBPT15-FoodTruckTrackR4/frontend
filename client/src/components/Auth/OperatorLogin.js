@@ -68,6 +68,7 @@ function OperatorLogin() {
 
     return (
         <div className="auth-form">
+            <p>Please login, Operator.</p>
             <Form onSubmit={(e) => {
                 e.preventDefault();
                 login(user);
@@ -91,7 +92,7 @@ function OperatorLogin() {
                     onChange={handleChange} />
                 <Button type="submit" className="login-btn">Login</Button>
             </Form>
-            <p>Don't have an account? <Link to="/register">Register</Link></p>
+            <p className="extra">Don't have an account? <Link to="/register">Register</Link></p>
             {err &&
                 <Alert style={{ marginTop: '10px' }} color="danger">
                     {err}

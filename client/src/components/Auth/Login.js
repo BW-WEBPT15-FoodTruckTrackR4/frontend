@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Button, Form, Input, Label, Alert } from 'reactstrap';
 
 /* components */
-import DinerReg from './DinerReg';
-import OperatorReg from './OperatorReg';
+import DinerLogin from './DinerLogin';
+import OperatorLogin from './OperatorReg';
 
-function Register(props) {
+export default function Login() {
 
     const [diner, setDiner] = useState(false);
     const [operator, setOperator] = useState(false);
@@ -21,15 +20,13 @@ function Register(props) {
     return (
         <div className="login-controls">
             <h3>Welcome Foodie,</h3>
-            <p>Please register a new account to get started.</p>
+            <p>Please login to continue, or register a new account to get started.</p>
             <button onClick={toggleDiner}>Diner</button>
 
             <button onClick={toggleOperator}>Operator</button>
 
-            {diner && <DinerReg />}
-            {operator && <OperatorReg />}
+            {diner && <DinerLogin />}
+            {operator && <OperatorLogin />}
         </div>
     )
 }
-
-export default Register;

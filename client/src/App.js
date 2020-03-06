@@ -6,15 +6,21 @@ import './App.css';
 
 /* components */
 import Register from './components/Auth/Register';
+import Login from './components/Auth/Login';
 import DinerLogin from './components/Auth/DinerLogin';
 import OperatorLogin from './components/Auth/OperatorLogin';
+import NavBar from './components/NavBar';
 import Dashboard from './components/Dashboard';
 
 function App() {
   return (
     <div className="App">
+      <NavBar />
       <Route exact path="/">
-        <p>Homepage content</p>
+        <Login />
+      </Route>
+      <Route path="/login">
+        <Login />
       </Route>
       <Route path="/register">
         <Register />
@@ -29,6 +35,7 @@ function App() {
       <Route path="/dashboard">
         <Dashboard />
       </Route>
+      <footer>Food Truck TrackR 2020.</footer>
     </div>
   );
 }

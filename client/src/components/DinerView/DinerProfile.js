@@ -4,34 +4,19 @@ import { axiosWithAuth } from '../../utils/axiosWithAuth';
 
 function DinerProfile(props) {
 
-    const [trucks, setTrucks] = useState([]);
-
     useEffect(() => {
-        axiosWithAuth().get(`/trucks`)
+        axiosWithAuth().get(`/diner/5`)
             .then(res => {
-                // console.log(res);
-                setTrucks(res.data);
+                console.log(res);
             })
             .catch(err => {
                 console.log(err);
-            });
+            })
     }, []);
 
     return (
         <div>
-            {console.log(trucks)}
-            <h2>Available Trucks:</h2>
-            {
-                trucks.map((truck, index) => {
-                    return (
-                        <div className="truck-card" key={index}>
-                            <img src={truck.imageOfTruck} alt="Truck View" />
-                            <p>Cuisine Type: {truck.cuisineType}</p>
-                            <p>Customer Rating Average: {truck.customerRatingAvg}</p>
-                        </div>
-                    )
-                })
-            }
+
         </div>
     )
 }
