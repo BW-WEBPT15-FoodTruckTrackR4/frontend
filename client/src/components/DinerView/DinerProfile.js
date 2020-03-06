@@ -1,37 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 // import axios from 'axios';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 
 function DinerProfile(props) {
 
-    const [trucks, setTrucks] = useState([]);
+    const [user, setUser] = useState({});
+
+    const uid = localStorage.getItem('id');
+    console.log(uid);
 
     useEffect(() => {
-        axiosWithAuth().get(`/trucks`)
+        axiosWithAuth().get(`/diner/${uid}`)
             .then(res => {
                 // console.log(res);
-                setTrucks(res.data);
+                setUser(res.data);
             })
             .catch(err => {
                 console.log(err);
-            });
+            })
     }, []);
 
     return (
-        <div>
-            {console.log(trucks)}
-            <h2>Available Trucks:</h2>
-            {
-                trucks.map((truck, index) => {
-                    return (
-                        <div className="truck-card" key={index}>
-                            <img src={truck.imageOfTruck} alt="Truck View" />
-                            <p>Cuisine Type: {truck.cuisineType}</p>
-                            <p>Customer Rating Average: {truck.customerRatingAvg}</p>
-                        </div>
-                    )
-                })
-            }
+        <div className="dashboard-container">
+            <h3>Welcome back, {localStorage.getItem('user')}</h3>
+            {console.log(user)}
         </div>
     )
 }
