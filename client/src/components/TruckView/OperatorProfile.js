@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react'
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 
-const TruckInfo = () => {
-    const [truck, SetTruck] = useState({
+function OperatorProfile() {
+    const [operator, SetOperator] = useState({
         id: '',
         userName: '',
+        password: '',
         email: '',
-        menuItems: ''
+        trucksOwend: ''
+
     })
 
     useEffect(() => {
@@ -19,6 +21,7 @@ const TruckInfo = () => {
         .catch(err => console.log(err));
     }, [id]);
 
+
     return (
         <div>
             
@@ -26,4 +29,4 @@ const TruckInfo = () => {
     )
 }
 
-export default TruckInfo
+export default OperatorProfile

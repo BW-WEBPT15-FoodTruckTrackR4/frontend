@@ -9,6 +9,7 @@ import Register from './components/Auth/Register';
 import DinerLogin from './components/Auth/DinerLogin';
 import OperatorLogin from './components/Auth/OperatorLogin';
 import Dashboard from './components/Dashboard';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (

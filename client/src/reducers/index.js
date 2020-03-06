@@ -55,7 +55,7 @@ const initialState = {
         userName: '',
         password: '',
         email: '',
-        trucksOwend: []
+        trucksOwned: ''
     },
     isDeleting: false,
     deleteError: '',
