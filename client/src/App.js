@@ -33,9 +33,7 @@ function App() {
         <OperatorLogin />
       </Route>
 
-      <Route path="/dashboard">
-        <Dashboard />
-      </Route>
+      <ProtectedRoute path="/dashboard" component={Dashboard} />
       <footer>Food Truck TrackR 2020.</footer>
     </div>
   );

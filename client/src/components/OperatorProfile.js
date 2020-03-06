@@ -11,6 +11,7 @@ function OperatorProfile() {
         axiosWithAuth().get(`/truck/${id}`)
             .then(res => {
                 console.log(res);
+                setUser(res.data);
             })
             .catch(err => {
                 console.log(err);
