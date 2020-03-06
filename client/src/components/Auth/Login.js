@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 /* components */
 import DinerLogin from './DinerLogin';
-import OperatorLogin from './OperatorReg';
+import OperatorLogin from './OperatorLogin';
 
 export default function Login() {
 

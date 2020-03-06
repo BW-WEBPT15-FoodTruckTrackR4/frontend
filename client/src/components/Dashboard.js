@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 /* components */
 import DinerProfile from './DinerView/DinerProfile';
+import OperatorProfile from './OperatorProfile';
 
 function Dashboard(props) {
 
@@ -10,6 +11,7 @@ function Dashboard(props) {
     return (
         <div>
             {role === 'diner' && <DinerProfile />}
+            {role === 'operator' && <OperatorProfile />}
         </div>
     )
 }

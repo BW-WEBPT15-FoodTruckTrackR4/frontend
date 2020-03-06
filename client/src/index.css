@@ -124,3 +124,9 @@ footer {
   color: #fafafa;
   font-size: 12px;
 }
+
+/* dashboard styling */
+
+.dashboard-container {
+  margin-top: 50px;
+}

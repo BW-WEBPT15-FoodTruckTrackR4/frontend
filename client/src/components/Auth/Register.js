@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Button, Form, Input, Label, Alert } from 'reactstrap';
 
 /* components */
 import DinerReg from './DinerReg';

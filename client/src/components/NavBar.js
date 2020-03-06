@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Logo from '../assets/logo.png';
 
 function NavBar() {
+
     return (
         <div className="header-nav">
             <div className="logo">

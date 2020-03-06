@@ -55,9 +55,11 @@ function DinerLogin() {
             axiosWithAuth().post('/diner/login', user)
                 .then(res => {
                     console.log(res);
+                    console.log(res.data.user);
                     localStorage.setItem('token', res.data.token);
                     localStorage.setItem('role', 'diner');
                     localStorage.setItem('id', res.data.id);
+                    localStorage.setItem('user', res.data.user);
                     setSuccess('Login successful...');
                     history.push('/Dashboard');
                     window.location.reload();
