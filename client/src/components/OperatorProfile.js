@@ -5,12 +5,13 @@ function OperatorProfile() {
 
     const [user, setUser] = useState({});
 
-    const uid = localStorage.getItem('id');
+    const id = localStorage.getItem('id');
 
     useEffect(() => {
-        axiosWithAuth().get(`/operator/${uid}`)
+        axiosWithAuth().get(`/truck/${id}`)
             .then(res => {
                 console.log(res);
+                setUser(res.data);
             })
             .catch(err => {
                 console.log(err);

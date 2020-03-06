@@ -34,7 +34,7 @@ export const operatorData = [
                         itemName: 'Tamale',
                         itemDescription: 'Tamales are a hispanic dish. Which feature a corn-based masa (dough) wrapped around a filling and steamed in a corn husk. They are traditionally filled with either chicken, pork, beef, chesse and/or beans.',
                         itemPhotos: [imageUrl= ''],
-                        itemPrice: parseFloat(),
+                        itemPrice: 5.99,
                         customerRatings: [5, 2],
                         customerRatingAvg: 3.5,
                         currentLocation: {

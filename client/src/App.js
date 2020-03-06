@@ -11,6 +11,7 @@ import DinerLogin from './components/Auth/DinerLogin';
 import OperatorLogin from './components/Auth/OperatorLogin';
 import NavBar from './components/NavBar';
 import Dashboard from './components/Dashboard';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
