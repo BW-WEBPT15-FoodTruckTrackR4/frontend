@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 /* components */
 import DinerProfile from './DinerView/DinerProfile';
-import OperatorProfile from './OperatorProfile';
+import OperatorProfile from './TruckView/OperatorProfile';
 
 function Dashboard(props) {
 

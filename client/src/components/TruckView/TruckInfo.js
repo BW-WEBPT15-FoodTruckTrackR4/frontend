@@ -4,7 +4,7 @@ import { axiosWithAuth } from '../../utils/axiosWithAuth';
 const TruckInfo = () => {
     const [truck, SetTruck] = useState({
         id: '',
-        userName: '',
+        username: '',
         email: '',
         menuItems: ''
     })
