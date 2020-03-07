@@ -12,7 +12,7 @@ function DinerReg(props) {
         username: '',
         password: '',
         currentLocation: '',
-        favoriteTrucks: ''
+        favoriteTrucks: []
     });
 
     /* error and success state for validation */
@@ -89,14 +89,6 @@ function DinerReg(props) {
                     autoComplete="off"
                     onChange={handleChange}
                 />
-                {/* <Input
-                    name="email"
-                    type="email"
-                    placeholder="Email"
-                    value={user.email}
-                    autoComplete="off"
-                    onChange={handleChange}
-                /> */}
                 <Input
                     type="password"
                     name="password"
@@ -107,22 +99,11 @@ function DinerReg(props) {
                 />
                 <Input
                     name="currentLocation"
-                    placeholder="Current Location"
+                    placeholder="Home Address"
                     value={user.currentLocation}
                     autoComplete="off"
                     onChange={handleChange}
                 />
-                <Input
-                    name="favoriteTrucks"
-                    placeholder="Favorite Trucks"
-                    value={user.favoriteTrucks}
-                    autoComplete="off"
-                    onChange={handleChange}
-                />
-                {/* <Input type="select" name="role" id="role" onChange={handleChange} value={user.role}>
-                    <option value="operator" name="operator">Operator</option>
-                    <option value="diner" name="diner">Diner</option>
-                </Input> */}
                 <Button type="submit" className="register-btn">Register</Button>
             </Form>
             {err &&
