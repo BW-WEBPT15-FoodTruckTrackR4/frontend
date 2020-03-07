@@ -14,8 +14,9 @@ function NavBar() {
 
             <div className="nav">
                 <Link to="/">Home</Link>
+                {localStorage.getItem('token') && <Link to="/dashboard">Dashboard</Link>}
                 {localStorage.getItem('token') && localStorage.getItem('role') === 'diner' &&
-                    <Link to="/">Diner Profile</Link>
+                    <Link to="/dashboard/diner">Diner Profile</Link>
                 }
                 {localStorage.getItem('token') && localStorage.getItem('role') === 'operator' &&
                     <Link to="/">Operator Profile</Link>
