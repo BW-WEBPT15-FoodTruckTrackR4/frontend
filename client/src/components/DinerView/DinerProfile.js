@@ -42,7 +42,7 @@ function DinerProfile(props) {
 
             <div className="favorite-trucks">
                 <h3>Your Favorite Trucks</h3>
-                {!favoriteTrucks && <p>You don't currently have any favorite trucks. Head to your <Link to="/dashboard/diner">profile settings</Link> to add one!</p>}
+                {!favoriteTrucks.length && <p>You don't currently have any favorite trucks. Head to your <Link to="/dashboard/diner">profile settings</Link> to add one!</p>}
                 {favoriteTrucks &&
                     <div>
                         {favoriteTrucks.map((truck, index) => {
