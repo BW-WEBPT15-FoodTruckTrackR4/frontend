@@ -72,6 +72,7 @@ function DinerReg(props) {
                 })
                 .catch(err => {
                     console.log(err);
+                    history.push('/diner/login');
                 })
         }
     }
