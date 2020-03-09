@@ -20,7 +20,7 @@ function OperatorProfile() {
             .catch(err => {
                 console.log(err);
             })
-    }, []);
+    }, [id]);
 
     return (
         <div>

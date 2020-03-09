@@ -18,7 +18,7 @@ function DinerProfile(props) {
             .catch(err => {
                 console.log(err);
             })
-    }, []);
+    }, [uid]);
 
     return (
         <div className="dashboard-container">
