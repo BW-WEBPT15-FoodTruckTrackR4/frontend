@@ -11,6 +11,7 @@ import DinerLogin from './components/Auth/DinerLogin';
 import OperatorLogin from './components/Auth/OperatorLogin';
 import NavBar from './components/NavBar';
 import Dashboard from './components/Dashboard';
+import DinerSettings from './components/DinerView/DinerSettings';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
@@ -33,7 +34,8 @@ function App() {
         <OperatorLogin />
       </Route>
 
-      <ProtectedRoute path="/dashboard" component={Dashboard} />
+      <ProtectedRoute exact path="/dashboard" component={Dashboard} />
+      <ProtectedRoute path="/dashboard/diner" component={DinerSettings} />
       <footer>Food Truck TrackR 2020.</footer>
     </div>
   );
