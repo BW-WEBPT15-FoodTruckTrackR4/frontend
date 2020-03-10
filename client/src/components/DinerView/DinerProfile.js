@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 import { Link } from 'react-router-dom';
 
+
 /* assets */
 import UserAvatar from '../../assets/UserAvatar.svg';
 
 function DinerProfile(props) {
-
     const [user, setUser] = useState({});
     const [favoriteTrucks, setFavoriteTrucks] = useState([]);
 
@@ -37,7 +37,6 @@ function DinerProfile(props) {
                         favorite trucks, as well as update them.
                     </p>
                 </div>
-                {console.log(user)}
             </div>
 
             <div className="favorite-trucks">

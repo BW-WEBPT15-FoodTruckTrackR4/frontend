@@ -152,7 +152,7 @@ footer {
   object-fit: contain;
 }
 
-.dashboard-container .favorite-trucks {
+.dashboard-container .favorite-trucks .owned-trucks {
   margin-top: 50px;
   width: 100%;
   display: flex;
@@ -160,18 +160,18 @@ footer {
   align-items: center;
 }
 
-.dashboard-container .favorite-trucks a {
+.dashboard-container .favorite-trucks .owned-trucks a {
   text-decoration: none;
   color: #E44635;
   font-weight: 500;
   transition: all 300ms;
 }
 
-.dashboard-container .favorite-trucks a:hover {
+.dashboard-container .favorite-trucks .owned-trucks a:hover {
   transition: opacity 300ms;
   opacity: 0.8;
 }
-.dashboard-container .favorite-trucks .fav-card {
+.dashboard-container .favorite-trucks .owned-trucks .fav-card {
   margin: 50px 0 50px;
   background: #1a1a1a;
   color: #fafafa;
@@ -182,7 +182,7 @@ footer {
   box-shadow: 1px 1px 4px 0px #000;
 }
 
-.dashboard-container .favorite-trucks .fav-card h4 {
+.dashboard-container .favorite-trucks .owned-trucks .fav-card h4 {
   font-size: 20px;
   margin-top: -20px;
   padding: 0;
@@ -215,13 +215,13 @@ footer {
   box-shadow: 1px 1px 4px 0px #000;
 }
 
-.truck-list .ind-truck .truck-img {
+.truck-list .ind-truck .truck-img .item-img {
   width: 40%;
   display: flex;
   justify-content: center;
 }
 
-.truck-list .ind-truck .truck-img img {
+.truck-list .ind-truck .truck-img .item-img img {
   width: 100%;
   object-fit: contain;
 }
@@ -236,7 +236,7 @@ footer {
   padding-top: 10px;
 }
 
-.diner-trucks {
+.diner-trucks .menu-list {
   margin-top: 50px;
   width: 100%;
   display: flex;

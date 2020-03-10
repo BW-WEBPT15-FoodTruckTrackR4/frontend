@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 import { useHistory } from 'react-router-dom';
 
-function DinerSettings() {
+function DinerSettings(props) {
 
     const [trucks, setTrucks] = useState([]);
 
@@ -59,6 +59,15 @@ function DinerSettings() {
             })
     }
 
+    const deleteTruck = (trucks) => {
+        axiosWithAuth()
+        .delete(`diner/${id}`, trucks)
+        .then(res => {
+            props.history.push(`/dashboard`)
+        })
+        .catch(err => console.log(err));
+    };
+
     return (
         <div className="diner-trucks">
             <p>Please update your list of favorite trucks, separated by commas.</p>
@@ -81,6 +90,7 @@ function DinerSettings() {
                 />
                 <button type="submit">Update</button>
                 {err && <p>{err}</p>}
+                <button type='button' onClick={deleteTruck}>Delete</button>
             </form>
 
             <div className="truck-list">
