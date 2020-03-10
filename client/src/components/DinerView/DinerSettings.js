@@ -59,9 +59,9 @@ function DinerSettings(props) {
             })
     }
 
-    const deleteTruck = (trucks) => {
-        axiosWithAuth()
-        .delete(`diner/${id}`, trucks)
+    const deleteTruck = e => {
+        e.preventDefault()
+        .delete(`diner/${id}`)
         .then(res => {
             props.history.push(`/dashboard`)
         })
