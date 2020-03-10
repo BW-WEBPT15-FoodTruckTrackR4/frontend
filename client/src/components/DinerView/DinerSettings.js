@@ -61,7 +61,7 @@ function DinerSettings(props) {
 
     const deleteTruck = e => {
         e.preventDefault()
-        .delete(`diner/${id}`)
+        .delete(`/diner/${id}`)
         .then(res => {
             props.history.push(`/dashboard`)
         })
