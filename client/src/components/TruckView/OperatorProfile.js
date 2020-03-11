@@ -10,8 +10,10 @@ import { Button } from 'reactstrap';
 
 function OperatorProfile(props) {
 
-    const [user, setUser] = useState({});
-    const [trucksOwned, setTrucksOwned] = useState({});
+    const [user, setUser] = useState({
+        imageOfTruck: '',
+        cuisineType: '',
+    });
 
     const id = localStorage.getItem('id');
 
@@ -20,16 +22,40 @@ function OperatorProfile(props) {
             .then(res => {
                 console.log(res);
                 setUser(res.data);
-                setTrucksOwned(res.data.trucksOwned);
             })
             .catch(err => {
                 console.log(err);
             })
     }, [id]);
 
+    const handleChange = e => {
+        setUser({
+            ...user,
+        [e.target.name]: e.target.value
+        })
+    }
+
+    const handleSubmit = e => {
+        e.preventDefault()
+
+        axiosWithAuth()
+        .post(`/truck/${id}`, user)
+        .then(res => {
+            console.log(res);
+            setUser({
+                ...user,
+                imageOfTruck: '',
+                cuisineType: ''
+            })
+            props.history.push('/dashboard')
+        })
+        .catch(err => console.log('failed to create new truck', err));
+    };
+
+
     const deleteTruck = (truck) => {
         axiosWithAuth()
-        .delete(`turck/${id}`, truck)
+        .delete(`truck/${id}`, truck)
         .then(res => {
             props.history.push(`/dashboard`)
         })
@@ -48,23 +74,27 @@ function OperatorProfile(props) {
                 </div>
             </div>
 
-            <div className="owned-trucks">
-                <h3>Your Trucks</h3>
-                {!trucksOwned.length && <p>You don't currently have any of your trucks listed. Head to your <Link to="/dashboard/operator">profile settings</Link> to add one!</p>}
-                {trucksOwned &&
-                    <div>
-                        {trucksOwned.map((truck, index) => {
-                            return (
-                                <div key={index} className="fav-card">
-                                    <h4>Truck Name: </h4>
-                                    <p>{truck}</p>
-                                </div>
-                            )
-                        })}
-                    </div>}
-                    <Link to={`/update-menu/${user.id}`}><Button outline color='primary'>Update</Button></Link>
-                    <Button outline color='danger' onClick={deleteTruck}>Delete</Button>
-            </div >
+            <div className='owned-trucks'>
+            <form onSubmit={handleSubmit}>
+                <input
+                    type='url'
+                    name='imageOfTruck'
+                    value={user.imageOfTruck}
+                    onChange={handleChange}
+                    placeholder='Photo Url'
+                />
+                <input
+                    type='text'
+                    name='cuisineType'
+                    value={user.cuisineType}
+                    onChange={handleChange}
+                    placeholder='Type of food offered'
+                />
+                
+                <Button className='register-btn' type='submit'>Add Truck</Button>
+            </form>
+
+            </div>
         </div>
     )
 }

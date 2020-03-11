@@ -4,10 +4,10 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 const AddItem = (props) => {
     const [newItem, setNewItem] = useState({
-        itemPhoto: '',
-        itemName: '',
-        itemDescription: '',
-        itemPrice: Number
+        imageOfTruck: '',
+        cuisineType: '',
+        customerRatings: '',
+        customerRatingAvg: ''
     })
     
     const handleChanges = e => {
@@ -21,14 +21,14 @@ const AddItem = (props) => {
         e.preventDefault()
 
         axiosWithAuth()
-        .post('/truck/menu', newItem)
+        .post('/truck', newItem)
         .then(res => {
             console.log(res);
             setNewItem({
-                itemPhoto: '',
-                itemName: '',
-                itemDescription: '',
-                itemPrice: Number
+                imageOfTruck: '',
+                cuisineType: '',
+                customerRatings: '',
+                customerRatingAvg: ''
             })
             props.history.push('/dashboard')
         })

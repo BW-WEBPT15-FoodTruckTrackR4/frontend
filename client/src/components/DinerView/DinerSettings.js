@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 import { useHistory } from 'react-router-dom';
+import Axios from 'axios';
 
 function DinerSettings(props) {
 
     const [trucks, setTrucks] = useState([]);
+    const [newTruck, setNewTruck] = useState([]);
 
     useEffect(() => {
         axiosWithAuth().get(`/trucks`)
@@ -46,9 +48,12 @@ function DinerSettings(props) {
         })
     }
 
+
+
     const update = (toEdit) => {
         // console.log(toEdit);
-        axiosWithAuth().put(`/diner/${id}`, toEdit)
+        axiosWithAuth()
+            .put(`/diner/${id}`, toEdit)
             .then(res => {
                 console.log(res);
                 history.push(`/dashboard`);
@@ -59,10 +64,25 @@ function DinerSettings(props) {
             })
     }
 
-    const deleteTruck = e => {
+    const handleSubmit = e => {
         e.preventDefault()
-        .delete(`/diner/${id}`)
+
+        axiosWithAuth()
+        .post('/diner/${id}', newTruck)
         .then(res => {
+            console.log(res);
+            setNewTruck({
+                
+            })
+            props.history.push('/dashboard')
+        })
+        .catch(err => console.log('failed to create new item', err));
+    };
+
+    const deleteTruck = trucks => {
+        Axios
+        .delete(`/diner/${id}`, trucks)
+        .then(() => {
             props.history.push(`/dashboard`)
         })
         .catch(err => console.log(err));
@@ -92,6 +112,27 @@ function DinerSettings(props) {
                 {err && <p>{err}</p>}
                 <button type='button' onClick={deleteTruck}>Delete</button>
             </form>
+
+            <div className='diner-trucks'>
+                <p>or add a new favorite truck</p>
+
+                <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    onChange={handleChange}
+                    placeholder="Taco Tops..."
+                />
+                <input
+                    type="password"
+                    name="password"
+                    value={toEdit.password}
+                    onChange={inputChange}
+                    placeholder="Confirm Password"
+                />
+                <button type="submit">Add Truck</button>
+            </form>
+
+            </div>
 
             <div className="truck-list">
                 {trucks.map((truck, index) => {
